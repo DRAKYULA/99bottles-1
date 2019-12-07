@@ -1,5 +1,4 @@
 class Bottles
-
   def song
     verses(99, 0)
   end
@@ -23,7 +22,7 @@ class Bottles
     if n > 1
       "#{n} bottles"
     elsif n == 1
-      "#{n} bottle"
+      "1 bottle"
     else
       "no more bottles"
     end
@@ -38,15 +37,10 @@ class Bottles
   end
 
   def build_second(n)
-    if n >= 1
+    if n > 0
       "Take #{it_or_one(n)} down and pass it around, #{pluralize(n-1)} of beer on the wall."
     else
-      final_verse
+      "Go to the store and buy some more, 99 bottles of beer on the wall."
     end
   end
-
-  def final_verse
-    "Go to the store and buy some more, 99 bottles of beer on the wall."
-  end
-
 end

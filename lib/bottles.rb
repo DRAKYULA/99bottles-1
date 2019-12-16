@@ -12,10 +12,7 @@ class Bottles
   end
 
   def verse(n)
-    <<-VERSE
-#{build_first(n)}
-#{build_second(n)}
-    VERSE
+    "#{build_first(n)}#{build_second(n)}\n"
   end
 
   def pluralize(n)
@@ -33,7 +30,7 @@ class Bottles
   end
 
   def build_first(n)
-    "#{pluralize(n).capitalize} of beer on the wall, #{pluralize(n)} of beer."
+    "#{pluralize(n).capitalize} of beer on the wall, #{pluralize(n)} of beer.\n"
   end
 
   def build_second(n)

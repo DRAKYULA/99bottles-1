@@ -11,33 +11,28 @@ class Bottles
     verses.join("\n")
   end
 
-  def verse(n)
-    "#{build_first(n)}#{build_second(n)}\n"
-  end
-
-  def pluralize(n)
-    if n > 1
-      "#{n} bottles"
-    elsif n == 1
-      "1 bottle"
+  def verse ( number )
+    case number
+    when 0
+      "No more bottles of beer on the wall, " +
+      "no more bottles of beer.\n" +
+      "Go to the store and buy some more, " +
+      "99 bottles of beer on the wall.\n"
+    when 1
+      "1 bottle of beer on the wall, " +
+      "1 bottle of beer.\n" +
+      "Take it down and pass it around, " +
+      "no more bottles of beer on the wall.\n"
+    when 2
+      "2 bottles of beer on the wall, " +
+      "2 bottles of beer.\n" +
+      "Take one down and pass it around, " +
+      "1 bottle of beer on the wall.\n"
     else
-      "no more bottles"
-    end
-  end
-
-  def it_or_one(n)
-    n >= 2 ? "one" : "it"
-  end
-
-  def build_first(n)
-    "#{pluralize(n).capitalize} of beer on the wall, #{pluralize(n)} of beer.\n"
-  end
-
-  def build_second(n)
-    if n > 0
-      "Take #{it_or_one(n)} down and pass it around, #{pluralize(n-1)} of beer on the wall."
-    else
-      "Go to the store and buy some more, 99 bottles of beer on the wall."
+      "#{number} bottles of beer on the wall, " +
+      "#{number} bottles of beer.\n" +
+      "Take one down and pass it around, " +
+      "#{number - 1} bottles of beer on the wall.\n"
     end
   end
 end
